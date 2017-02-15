@@ -9,14 +9,33 @@
     overflow:hidden;
 }
 
-.emptyTable {
+.tableHorizontal {
     display: block;
     height: 100px;
-    width: 100px;
-    /*border: 1px solid black;*/
+    width: 80px;
     margin: 1px; 1px;
     table-layout: fixed;    
     overflow: hidden;
+
+}
+.tableVertical {
+    display: block;
+    height: 100px;
+    width: 80px;
+    margin: 1px; 1px;
+    table-layout: fixed;    
+    overflow: hidden;
+
+}
+
+.tableEmpty {
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin: 1px; 1px;
+    table-layout: fixed;    
+    overflow: hidden;
+    /*border: 1px solid black;*/
     /*text-align: center;*/
     /*vertical-align: center;*/
     /*line-height: 100px;*/
