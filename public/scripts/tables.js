@@ -22,9 +22,22 @@ function makesomedivs(i, j) {
     console.log(rows.length);
 }
 
+function test(i, j) {
+    var rows = new Array();
+
+    for (var x=0; x<=i; x++) {
+        //rows[x] = "hej";
+        //rows.push("hej");
+        console.log("added a hej");
+    }
+    for (var x=0; x==rows.length; x++) {
+        //console.log("nhej");
+    }
+}
+
 function createTable() {
     var table = document.getElementById("tables");
-    
+    return table; 
 }
 
 function testArrays() {
@@ -44,5 +57,10 @@ function testArrays() {
     console.log("type inside array at 2: " + typeof(testarray2[2]));
     testarray2[3] = document.createElement("div");
     console.log("type inside array at 3: " + typeof(testarray2[3]));
+    
+    var table = createTable();
+    table.appendChild(document.createTextNode("hej"));
+}
 
-    }
+
+
