@@ -73,7 +73,9 @@ function createTable(rows,columns) {
     for (var x=0; x<rows.length; x++) {
        tables.appendChild(rows[x]); 
     }
-
+    
+    var section = document.getElementById("dinnerTable");
+    section.appendChild(table);
     return table; 
 }
 
@@ -99,5 +101,32 @@ function testArrays() {
     table.appendChild(document.createTextNode("hej"));
 }
 
+function createMatrixTable(rows, columns) {
+       var newTable = document.createElement("table");
+
+       var rowArray = new Array();
+
+       for (var x=0; x<rows; x++) {
+            var newTr = document.createElement("tr");
+            for (var x=0; x<columns; x++) {
+                var newTd = document.createElement("td");
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "tableHorizontal");
+                newTd.appendChild(newDiv);
+                newTr.appendChild(newTd);
+            }
+            rowArray[x] = newTr;
+        }
+
+        for (var x=0; x<length.rowArray; x++) {
+            newTable.appendChild(rowArray[x]);
+        }
+
+        document.getElementById("dinnerTable").innerHTML = newTable;
+}
 
 
+function addATable() {
+    var locatioN = document.getElementById("dinnerTable");
+    locatioN.innerHTML = document.createElement("table");
+}
