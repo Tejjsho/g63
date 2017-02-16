@@ -24,19 +24,56 @@ function makesomedivs(i, j) {
 
 function test(i, j) {
     var rows = new Array();
+    console.log(rows);
+    var a = document.createElement("table");
+    rows.push(a);
+    console.log(rows);
 
-    for (var x=0; x<=i; x++) {
+    for (var x=0; x<i; x++) {
         //rows[x] = "hej";
         //rows.push("hej");
-        console.log("added a hej");
+        console.log(rows);
     }
+    console.log(rows[0]);
+
     for (var x=0; x==rows.length; x++) {
-        //console.log("nhej");
+        console.log(rows);
     }
+
+    for (var x=0; x==rows.length; x++) {
+        rows[x].appendChild(document.createElement("tr"));
+    }
+    console.log(rows[0]);
 }
 
-function createTable() {
-    var table = document.getElementById("tables");
+function createTable(rows,columns) {
+    var table = document.getElementById("dinnerTables");
+    var rows = new Array();
+    
+    //create rows
+    for (var x=0; x<rows; x++) {
+        var tr = document.createElement("tr");
+        addCells(tr);  
+        rows[x] = tr;
+
+    }
+    
+    //add tds with divs for one tr
+    function addCells(tr) {
+        for (var x=0; x<columns; x++) {
+           var newTd = document.createElement("td");
+           var newDiv = document.createElement("div");
+           newDiv.setAttribute("class","tableHorizontal");
+           newTd.appendChild(newDiv);
+           tr.appendChild(newTd);    
+        }
+    }
+
+    //add all the trs to the maintable
+    for (var x=0; x<rows.length; x++) {
+       tables.appendChild(rows[x]); 
+    }
+
     return table; 
 }
 
