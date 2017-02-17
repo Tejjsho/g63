@@ -1,5 +1,8 @@
 run:
-	@echo "make this useful. make host to start the server locally with node app.js"
+	@echo "NOTE: Make this useful.\n" 
+	@echo "Available commands:"
+	@echo "make host - to start a server locally at localhost:3000"
+	@echo "\n"
 
 host:
 	@echo "Starting the server..."

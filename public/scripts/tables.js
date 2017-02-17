@@ -22,9 +22,61 @@ function makesomedivs(i, j) {
     console.log(rows.length);
 }
 
-function createTable() {
-    var table = document.getElementById("tables");
+function test(i, j) {
+    var rows = new Array();
+    console.log(rows);
+    var a = document.createElement("table");
+    rows.push(a);
+    console.log(rows);
+
+    for (var x=0; x<i; x++) {
+        //rows[x] = "hej";
+        //rows.push("hej");
+        console.log(rows);
+    }
+    console.log(rows[0]);
+
+    for (var x=0; x==rows.length; x++) {
+        console.log(rows);
+    }
+
+    for (var x=0; x==rows.length; x++) {
+        rows[x].appendChild(document.createElement("tr"));
+    }
+    console.log(rows[0]);
+}
+
+function createTable(rows,columns) {
+    var table = document.getElementById("dinnerTables");
+    var rows = new Array();
     
+    //create rows
+    for (var x=0; x<rows; x++) {
+        var tr = document.createElement("tr");
+        addCells(tr);  
+        rows[x] = tr;
+
+    }
+    
+    //add tds with divs for one tr
+    function addCells(tr) {
+        for (var x=0; x<columns; x++) {
+           var newTd = document.createElement("td");
+           var newDiv = document.createElement("div");
+           newDiv.setAttribute("class","tableHorizontal");
+           newTd.appendChild(newDiv);
+           tr.appendChild(newTd);    
+        }
+    }
+
+    //add all the trs to the maintable
+    for (var x=0; x<rows.length; x++) {
+       tables.appendChild(rows[x]); 
+    }
+    
+    var section = document.getElementById("dinnerTable");
+    section.appendChild(table);
+    return table; 
 }
 
 function testArrays() {
@@ -44,5 +96,37 @@ function testArrays() {
     console.log("type inside array at 2: " + typeof(testarray2[2]));
     testarray2[3] = document.createElement("div");
     console.log("type inside array at 3: " + typeof(testarray2[3]));
+    
+    var table = createTable();
+    table.appendChild(document.createTextNode("hej"));
+}
 
-    }
+function createMatrixTable(rows, columns) {
+       var newTable = document.createElement("table");
+
+       var rowArray = new Array();
+
+       for (var x=0; x<rows; x++) {
+            var newTr = document.createElement("tr");
+            for (var x=0; x<columns; x++) {
+                var newTd = document.createElement("td");
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "tableHorizontal");
+                newTd.appendChild(newDiv);
+                newTr.appendChild(newTd);
+            }
+            rowArray[x] = newTr;
+        }
+
+        for (var x=0; x<length.rowArray; x++) {
+            newTable.appendChild(rowArray[x]);
+        }
+
+        document.getElementById("dinnerTable").innerHTML = newTable;
+}
+
+
+function addATable() {
+    var locatioN = document.getElementById("dinnerTable");
+    locatioN.innerHTML = document.createElement("table");
+}
