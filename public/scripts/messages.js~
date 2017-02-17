@@ -1,0 +1,19 @@
+'use strict';
+
+var socket = io();
+
+var sharedVueData = {
+    data: {
+	tableNr: 0,
+	orderNr: 0
+    },
+    created: function(){
+	socket.on('currentTable', function(nr) {
+	    tableNr = nr;
+	}.bind(this));
+
+	socket.on('currentOrder', function(nr) {
+	    orderNr = nr;
+	}.bind(this));
+    }
+}

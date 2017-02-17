@@ -1,0 +1,61 @@
+{
+    "food": [
+	{
+	    "menuID" : 6,
+	    "label"  : "Hamburgare",
+	    "price"  : 70,
+	    "details": [
+		{
+		    "onion"    : true,
+		    "gluten" : true,
+		    "vegan"  : false,
+		    "lactose": true,
+		    "pickles": true,
+		    "cheese" : true,
+		    "bacon"  : [
+			{
+			    "extra" : false,
+			    "price" : 5
+			}
+		    ],
+		    "egg"    : [
+			{
+			    "extra" : false,
+			    "price" : 5
+			}
+		    ]
+		}
+	    },
+		
+	    {
+		"menuID" : 6,
+		"label"  : "Hamburgare",
+		"price"  : 70,
+		"details": [
+		    {
+			"onion"    : true,
+			"gluten" : true,
+			"vegan"  : false,
+			"lactose": true,
+			"pickles": true,
+			"cheese" : true,
+			"bacon"  : [
+			    {
+				"extra" : false,
+				"price" : 5
+			    }
+			],
+			"egg"    : [
+			    {
+				"extra" : false,
+				"price" : 5
+			    }
+			]
+		    },
+		    
+		]
+	    },
+	    
+	}
+    ]
+}

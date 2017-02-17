@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" type="text/css" href="/g63/public/css/table.css">--!>
     <link rel="stylesheet" type="text/css" href="css/table.css">
     <script src="scripts/tables.js"></script>
+    <script>    </script>
     <title>Tables</title>
   </head>
   <body>
@@ -228,7 +228,14 @@
         <table id="dinnerTables">
         </table>
     </section>
+    <input v-model="TableNr" placeholder="Pick table">
+    <p>Table number is: {{TableNr}} </p>
+    <button v-on:click="sendToBar(TableNr)">Next</button>
     </main>
+    <script src="/vue/vue.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scripts/messages.js"></script>
+    <script src="scripts/tableToBar.js"></script>
   </body>
   <footer>
 

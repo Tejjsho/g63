@@ -1,0 +1,25 @@
+#checkout {
+    background-color: lightgrey;
+    max-width: 100%;
+    width: 300px;
+    height: 800px;
+    float:right;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+}
+
+#tableNr {
+    text-align: left;
+    background-color: red;
+    width: 150px;
+    float:left;
+}
+
+#orderNr {
+    text-align: left;
+    background-color: blue;
+    width: 150px;
+    float: right;
+}

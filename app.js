@@ -43,6 +43,23 @@ var orders = function() {
   };
 }(); // instantiate the class immediately
 
+var tables = function() {
+    var tablenr = 0;
+
+    var getTableNr = function() {
+	return tablenr;
+    };
+
+    var setTableNr = function(nr) {
+	tablenr = nr;
+    };
+
+    return {
+	getTableNr : getTableNr,
+	setTableNr : setTableNr
+    };
+}();
+
 // Serve static assets from public/
 app.use(express.static(path.join(__dirname, 'public/')));
 // Serve vue from vue/ directory
@@ -63,20 +80,25 @@ app.get('/kitchen', function(req, res) {
 });
 
 io.on('connection', function(socket) {
-  // Send list of orders and the menu when a client connects
-  //io.emit('initialize', { orders: orders.getAll(), 
-  //                        menu: getMenu() });
-
-  // When someone orders something
-  socket.on('order', function(dish) {
-    orders.addOrder(dish);
-    io.emit('currentQueue', orders.getAll());
-  });
-
-  socket.on('orderDone', function(orderId) {
-    orders.markDone(orderId);
-    io.emit('currentQueue', orders.getAll());
-  });
+    // Send list of orders and the menu when a client connects
+    //io.emit('initialize', { orders: orders.getAll(), 
+    //                        menu: getMenu() });
+    
+    socket.on('tableNr', function(table) {
+	tables.setTableNr(table);
+	console.log(tables.getTableNr());
+	io.emit('currentTable', tables.getTableNr());
+    });
+    // When someone orders something
+    socket.on('order', function(dish) {
+	orders.addOrder(dish);
+	io.emit('currentQueue', orders.getAll());
+    });
+    
+    socket.on('orderDone', function(orderId) {
+	orders.markDone(orderId);
+	io.emit('currentQueue', orders.getAll());
+    });
 });
 
 http.listen(app.get('port'), function() {

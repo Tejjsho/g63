@@ -3,14 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bar.css">
     <title>Bar</title>
   </head>
   <body>
     <main id="mainID">
-      
+      <div id="checkout">
+	<div> Checkout </div>
+	<div id="tableNr"> {{TableNr}}</div>
+	<div id="orderNr"> {{OrderNr}}</div>
+      </div>
     </main>
+    <script src="/vue/vue.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scripts/messages.js"></script>
+    <script src="scripts/barToKitchen.js"></script>
   </body>
   <footer>
-
   </footer>
 </html>

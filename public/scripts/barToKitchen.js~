@@ -1,0 +1,8 @@
+new Vue ({
+    el: '#mainID',
+    data: {
+	TableNr: 0,
+	OrderNr: 0
+    }
+
+})
