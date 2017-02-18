@@ -11,10 +11,10 @@ function Drink(name, cl, price) {
 var arr = [];
 
 var b1 = new Drink("Öl", 50, 25);
-var b2 = new Drink("Guiness", 50, 45)
+var b2 = new Drink("Guiness", 50, 45);
 
-arr.push(b1);
 arr.push(b2);
+arr.push(b1);
 
 function displayItems() {
     while(arr.length > 0) {
@@ -27,7 +27,7 @@ function displayItems() {
         button.setAttribute('id', item.toString());
         
         
-        document.getElementById('mainID').appendChild(button);
+        document.getElementById('menuList').appendChild(button);
         button = document.getElementById(item.toString());
         button.onclick = function() {sendItem(item)};
         

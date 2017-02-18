@@ -24,15 +24,29 @@
     float: right;
 }
 
+#menu {
+    background-color: lightgrey;
+    max-width: 100%;
+    width: 300px;
+    height: 800px;
+    float: left;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+
 .menuButton {
     background-color: yellow;
     border: none;
     color: black;
-    padding: 15px 32px;
+    padding: 12px 32px;
     text-align: center;
     display: block;
     font-size: 16px;
-    margin: 4px 4px;
+    margin: 4px 50px;
     cursor: pointer;
     width: 200px;
     
