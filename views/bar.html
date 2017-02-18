@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/bar.css">
+    <script src="../public/scripts/barlist.js"></script>
+    <script>
+        docLoaded(indexPageLoaded);
+    </script>
+    <link rel="stylesheet" type="text/css" href="../public/css/bar.css">
     <title>Bar</title>
   </head>
   <body>
     <main id="mainID">
+      <div id="menuList"></div>
       <div id="checkout">
 	<div> Checkout </div>
 	<div id="tableNr"> {{TableNr}}</div>
