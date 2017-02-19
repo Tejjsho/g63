@@ -1,38 +1,18 @@
-function Drink(name, cl, price) {
-    this.name = name;
-    this.cl = cl;
-    this.price = price;
-    this.toString = function() {
-        return this.name + ': ' + this.price + ' kr.';
-    }
-    
-};
-
-var arr = [];
-
-var b1 = new Drink("Öl", 50, 25);
-var b2 = new Drink("Guiness", 50, 45);
-
-arr.push(b2);
-arr.push(b1);
-
 function displayItems() {
-    while(arr.length > 0) {
-        var item = arr.pop();
+    for(i = 0; i < drinks.length; i++) {
+        var item = drinks[i];
         
         var button = document.createElement("button");        
         
-        button.innerHTML = item.name;
+        button.innerHTML = '{{wow}}';
         button.setAttribute("class", "menuButton");
-        button.setAttribute('id', item.toString());
-        
+        button.setAttribute('id', 'drink');
+	button.setAttribute('v-on:click', 'sendItem');       
         
         document.getElementById('menuList').appendChild(button);
-        button = document.getElementById(item.toString());
-        button.onclick = function() {sendItem(item)};
+        //button = document.getElementById(item.toString());
+        //button.onclick = function() {console.log(drinks.price)};
         
-        
-
     }
 };
 
@@ -48,7 +28,3 @@ function indexPageLoaded() {
     displayItems();
 }
 
-function sendItem(item) {
-    console.log(item.toString());
-    
-}

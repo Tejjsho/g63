@@ -88,6 +88,7 @@ io.on('connection', function(socket) {
 	tables.setTableNr(table);
 	console.log(tables.getTableNr());
 	io.emit('currentTable', tables.getTableNr());
+	io.emit('currentOrder');
     });
     // When someone orders something
     socket.on('order', function(dish) {

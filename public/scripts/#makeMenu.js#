@@ -1,0 +1,5 @@
+function Drink(name, cl, price) {
+    this.name = name;
+    this.cl = cl;
+    this.price = price;
+}
