@@ -14,9 +14,11 @@
   </head>
   <body>
     <main id="mainID">
+      <button id="foobar" v-on:click="sendToKitchen(TableNr, OrderNr)">Next</button>
+      <!-- <div v-for="order in Orders"> {{order.orderId}}</div> -->
       <div id="checkout">
 	<div><h2> Checkout </h2></div>
-	<div id="tableNr"> Table nr: {{TableNr}}</div>
+	<div id="tableNrDiv">Table nr: <input id="tableNr" v-model="TableNr" placeholder="Pick table"></div>
 	<div id="orderNr"> Order nr: {{OrderNr}}</div>
 	<div id="checkoutItems">
 	  

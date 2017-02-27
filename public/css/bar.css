@@ -9,7 +9,6 @@
     padding: 20px;
     text-align: center;
     float: right;
-    
 }
 
 #checkoutItems {
@@ -32,11 +31,16 @@
 }
 
 #tableNr {
-    text-align: left;
+    text-align: right;
     --border: solid;
     --background-color: red;
-    width: 120px;
+    width: 50px;
+    --float:left;
+}
+
+#tableNrDiv {
     float:left;
+    width: 130px;
 }
 
 #orderNr {

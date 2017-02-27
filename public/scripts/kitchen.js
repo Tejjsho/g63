@@ -11,21 +11,26 @@ new Vue ({
     methods : {
 	
 	sendItem : function(listTo, item) {
-	    listTo.push(item);
+	    //listTo.push(item);
+	    socket.emit('orderNext', item.orderId);
 	},
 	readyOrder : function(item) {
-	    var index = this.readyList.indexOf(item);
-	    if(index > -1) {
-		this.readyList.splice(index, 1);
-	    }
+	    socket.emit('orderNext', item.orderId);
+	    socket.emit('orderNext', item.orderId);
+	    socket.emit('orderNext', item.orderId);
+	    // var index = this.readyList.indexOf(item);
+	    // if(index > -1) {
+	    // 	this.readyList.splice(index, 1);
+	    // }
 	},
-    inProgOrder : function(item) {
-	    var index = this.inProgList.indexOf(item);
-	    if(index > -1) {
-		this.inProgList.splice(index, 1);
-        this.readyList.push(item);
+	inProgOrder : function(item) {
+	    socket.emit('orderDone', item.orderId);
+	//     var index = this.inProgList.indexOf(item);
+	//     if(index > -1) {
+	// 	this.inProgList.splice(index, 1);
+        // this.readyList.push(item);
 	    }
 	}
-    }
+    
     
 })
