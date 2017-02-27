@@ -102,31 +102,46 @@ function testArrays() {
 }
 
 function createMatrixTable(rows, columns) {
-       var newTable = document.createElement("table");
 
        var rowArray = new Array();
 
+       var newTable = document.createElement("table");
        for (var x=0; x<rows; x++) {
             var newTr = document.createElement("tr");
-            for (var x=0; x<columns; x++) {
+            for (var y=0; y<columns; y++) {
                 var newTd = document.createElement("td");
                 var newDiv = document.createElement("div");
-                newDiv.setAttribute("class", "tableHorizontal");
+                var button = document.createElement("button");
+                button.setAttribute("type", "button");
+
+                button.setAttribute("onclick", "myFunc()");
+
+                newDiv.setAttribute("class", "tableVertical");
                 newTd.appendChild(newDiv);
                 newTr.appendChild(newTd);
             }
-            rowArray[x] = newTr;
+            //rowArray[x] = newTr;
+            newTable.appendChild(newTr);
+            //console.log(rowArray[x]);
+        }
+        
+        for (var x=0; x<rowArray.length; x++) {
+            //newTable.appendChild(rowArray[x]);
+            //console.log(newTable);
+            //console.log(typeof(rowArray));
         }
 
-        for (var x=0; x<length.rowArray; x++) {
-            newTable.appendChild(rowArray[x]);
-        }
 
-        document.getElementById("dinnerTable").innerHTML = newTable;
+        //document.getElementById("dinnerTable").innerHTML = newTable;
+        //console.log(newTable);
+        //console.log(document.getElementById("dinnerTable"));
+
+        document.getElementById("dinnerTable").appendChild(newTable);
 }
 
 
 function addATable() {
     var locatioN = document.getElementById("dinnerTable");
-    locatioN.innerHTML = document.createElement("table");
+    //locatioN.innerHTML = document.createElement("table");
+    locatioN.appendChild(document.createElement("table"));
 }
