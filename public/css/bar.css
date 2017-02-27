@@ -1,3 +1,24 @@
+#menu {
+    background-color: lightgrey;
+    max-width: 100%;
+    width: 600px;
+    height: 800px;
+    float: left;
+    border-radius: 25px;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    float: right;
+    
+}
+
+#checkoutItems {
+    --overflow: scroll;
+    overflow-y: scroll;
+    width: 320px;
+    height: 700px;
+}
+
 #checkout {
     background-color: lightgrey;
     max-width: 100%;
@@ -12,14 +33,49 @@
 
 #tableNr {
     text-align: left;
-    background-color: red;
-    width: 150px;
+    --border: solid;
+    --background-color: red;
+    width: 120px;
     float:left;
 }
 
 #orderNr {
     text-align: left;
-    background-color: blue;
-    width: 150px;
+    --background-color: blue;
+--    border: solid;
+    width: 120px;
     float: right;
+}
+
+.foodButton {
+    background-color: orange;
+    border: solid black;
+    color: black;
+    //padding: 12px 32px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    margin-top: 1px;
+    cursor: pointer;
+    width: 600px;
+}
+
+.drinkButton {
+    background-color: yellow;
+    border: solid black;
+    color: black;
+    //padding: 12px 32px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    margin-top: 1px;
+    cursor: pointer;
+    width: 600px;
+}
+
+.checkoutButton {
+    background-color: lime;
+    border: 0.5px solid black;
+    width: 300px;
+    margin-top: 0.5px;
 }

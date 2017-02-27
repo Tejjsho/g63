@@ -3,14 +3,46 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="json/food.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/kitchen.css">
     <title>Kitchen</title>
+    <!-- <script src="scripts/barlist.js"></script> -->
+    <!-- <script> -->
+    <!--     docLoaded(indexPageLoaded); -->
+    <!-- </script> -->    
   </head>
-  <body>
-    <main id="mainID">
-      
-    </main>
-  </body>
-  <footer>
-
-  </footer>
+    <body>
+        <main id="mainID">
+            
+            <div id="inProg">
+                <div><h2> Kitchen </h2></div>
+                <div id="scrollWide">
+                    <button class="progButton" v-for="item in inProgList" v-on:click="inProgOrder(item)">{{item.label}} {{item.ingredients}}</button> <!--Bättre sätt?-->
+                </div>
+            </div>
+            
+            <div id="newOrd">
+                <div><h2>New Orders</h2></div>
+                <div id=scroll>
+                    <button class="orderButton" v-for="food in fooditems" v-on:click="sendItem(inProgList, food)">{{food.label}}</button>
+                </div>
+            </div>
+            
+            <div id="ready">
+                <div><h2> Ready </h2></div>
+                <div id="scrollWide">
+                    <button class="readyButton" v-for="item in readyList" v-on:click="readyOrder(item)">{{item.label}}</button>
+                </div>
+            </div>
+            
+        </main>
+        
+        <script src="/vue/vue.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="scripts/messages.js"></script>
+        <script src="scripts/kitchen.js"></script>
+        
+    </body>
+    <footer>
+    </footer>
 </html>

@@ -3,15 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="json/drinks.js"></script>
+    <script type="text/javascript" src="json/food.js"></script>
+    <!-- <script src="scripts/barlist.js"></script> -->
+    <!-- <script> -->
+    <!--     docLoaded(indexPageLoaded); -->
+    <!-- </script> -->
     <link rel="stylesheet" type="text/css" href="css/bar.css">
     <title>Bar</title>
   </head>
   <body>
     <main id="mainID">
       <div id="checkout">
-	<div> Checkout </div>
-	<div id="tableNr"> {{TableNr}}</div>
-	<div id="orderNr"> {{OrderNr}}</div>
+	<div><h2> Checkout </h2></div>
+	<div id="tableNr"> Table nr: {{TableNr}}</div>
+	<div id="orderNr"> Order nr: {{OrderNr}}</div>
+	<div id="checkoutItems">
+	  
+	  <button class="checkoutButton" v-for="item in checkout" v-on:click="recieveItem(item)">{{item.label}} {{item.price}}Kr</button> 
+	  
+	</div>
+	<div id="total">Total: {{total}}Kr</div>
+      </div>
+      <div id="menu">
+        <div><Strong>Menu</Strong> </div>
+	<button class="drinkButton" v-for="drink in items" v-on:click="sendItem(drink)">{{drink.menuID}}# {{drink.label}}</button>
+	<button class="foodButton" v-for="food in fooditems" v-on:click="sendItem(food)">{{food.menuID}}# {{food.label}}</button>
+	<div id="menuList"></div>
       </div>
     </main>
     <script src="/vue/vue.js"></script>
