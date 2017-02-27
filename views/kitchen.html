@@ -17,21 +17,21 @@
             <div id="inProg">
                 <div><h2> Kitchen </h2></div>
                 <div id="scrollWide">
-                    <button class="progButton" v-for="item in inProgList" v-on:click="inProgOrder(item)">{{item.label}} {{item.ingredients}}</button> <!--Bättre sätt?-->
+                    <button class="progButton" v-for="item in Orders" v-if="item.state == 2" v-on:click="inProgOrder(item)"><div v-for="items in item.items" > {{items.label}} {{items.ingredients}}</div></button> <!--Bättre sätt?-->
                 </div>
             </div>
             
             <div id="newOrd">
                 <div><h2>New Orders</h2></div>
                 <div id=scroll>
-                    <button class="orderButton" v-for="food in fooditems" v-on:click="sendItem(inProgList, food)">{{food.label}}</button>
+                    <button class="orderButton" v-for="food in Orders" v-if="food.state == 1" v-on:click="sendItem(inProgList, food)"><div v-for="items in food.items">{{items.label}}</div></button>
                 </div>
             </div>
             
             <div id="ready">
                 <div><h2> Ready </h2></div>
                 <div id="scrollWide">
-                    <button class="readyButton" v-for="item in readyList" v-on:click="readyOrder(item)">{{item.label}}</button>
+                    <button class="readyButton" v-for="item in Orders" v-if="item.state == 0" v-on:click="readyOrder(item)"><div v-for="items in item.items">{{items.label}}</div></button>
                 </div>
             </div>
             

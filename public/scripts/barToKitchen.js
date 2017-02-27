@@ -1,10 +1,15 @@
 'use strict';
+var order = function(orderNum, tableNum, items) {
+    this.orderId = orderNum;
+    this.tableId = tableNum;
+    this.items = items;
+    this.state = 1; //0 - done, 1 - queue, 2 - in progress 
+}
 
 new Vue ({
     el: '#mainID',
     mixins: [sharedVueData],
     data: {
-	wow : 30,
 	items: drinks,
 	fooditems: food,
 	checkout : [],
@@ -32,6 +37,16 @@ new Vue ({
 		if(kitchenIndex > -1) {
 		    this.toKitchen.splice(kitchenIndex, 1);
 		}
+	    }
+	},
+
+	sendToKitchen : function(tableNr, orderNr) {
+	    if(!isNaN(tableNr) && this.toKitchen.length !== 0) {
+		socket.emit('tableNr', tableNr);
+		var foobar = new order(orderNr, tableNr, this.toKitchen)
+		socket.emit('order', foobar);
+		this.toKitchen = [];
+		this.checkout = [];
 	    }
 	}
     }

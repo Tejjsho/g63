@@ -19,28 +19,36 @@ app.set('port', (process.env.PORT || port));
 
 // Store orders in a an anonymous class for now. 
 var orders = function() {
-  var orders = {};
+    var orders = {};
+    
+    var addOrder = function(dish) {
+	orders[dish.orderId] = dish;
+	//orders[dish.orderId].items = dish.items;
+	//orders[dish.orderId].state = 1;
+	//orders[dish.orderId].table = dish.tableId;
+	//orders[dish.orderId].order = dish.orderId;
+    };
 
-  var addOrder = function(dish) {
-    orders[dish.orderId] ={};
-    orders[dish.orderId].orderItems = dish.orderItems;
-    orders[dish.orderId].done = false;
-  };
+    var getAll = function() {
+	return orders;
+    };
 
-  var getAll = function() {
-    return orders;
-  };
+    var markDone = function(orderId) {
+	orders[orderId].state = 0;
+    };
 
-  var markDone = function(orderId) {
-    orders[orderId].done = true;
-  };
 
-  //expose functions
-  return {
-    addOrder : addOrder,
-    getAll : getAll,
-    markDone : markDone
-  };
+    var nextState = function(orderID) {
+	orders[orderID].state += 1;
+    };
+    
+    //expose functions
+    return {
+	addOrder : addOrder,
+	getAll : getAll,
+	markDone : markDone,
+	nextState : nextState
+    };
 }(); // instantiate the class immediately
 
 var tables = function() {
@@ -93,11 +101,17 @@ io.on('connection', function(socket) {
     // When someone orders something
     socket.on('order', function(dish) {
 	orders.addOrder(dish);
+	console.log("wow");
 	io.emit('currentQueue', orders.getAll());
     });
     
     socket.on('orderDone', function(orderId) {
 	orders.markDone(orderId);
+	io.emit('currentQueue', orders.getAll());
+    });
+ 
+    socket.on('orderNext', function(orderId) {
+	orders.nextState(orderId);
 	io.emit('currentQueue', orders.getAll());
     });
 });
