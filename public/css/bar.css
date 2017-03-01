@@ -64,6 +64,18 @@
     width: 600px;
 }
 
+.foodButton + input {
+    display: none;
+}
+
+.foodButton + input + div {
+    display: none;
+}
+
+.foodButton + input:checked + div {
+    display: block;
+}
+
 .drinkButton {
     background-color: yellow;
     border: solid black;
@@ -83,3 +95,5 @@
     width: 300px;
     margin-top: 0.5px;
 }
+
+.show {display: block;}

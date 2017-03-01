@@ -30,7 +30,17 @@
       <div id="menu">
         <div><Strong>Menu</Strong> </div>
 	<button class="drinkButton" v-for="drink in items" v-on:click="sendItem(drink)">{{drink.menuID}}# {{drink.label}}</button>
-	<button class="foodButton" v-for="food in fooditems" v-on:click="sendItem(food)">{{food.menuID}}# {{food.label}}</button>
+	<div v-for="(food, index) in fooditems">
+	  <label class="foodButton" v-bind:for="index">{{food.menuID}}# {{food.label}}	</label>
+	  <input v-bind:id="index" type="checkbox" name="c1">
+	  <div class="dropDownContent">
+	    <div v-for="ingredient in food.ingredients">
+	      <label v-bind:for="ingredient">{{ingredient}}</label>
+	      <input v-bind:id="food.menuID" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
+	    </div>
+	    <button id="sendToKitchen" v-on:click="sendItem(food)">Klart</button>
+	  </div>
+	</div>
 	<div id="menuList"></div>
       </div>
     </main>
