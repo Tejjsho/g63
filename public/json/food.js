@@ -30,13 +30,13 @@ var food = [
 ]
 
 
-var formalFood = {
-    hamburgare = {
-        "menuID" : 20,
-        "type": "food",
-        "name": "Hamburger",
-        "price": 70,
-        "ingredients":["onion","cheese","pickles"],
-        "allergies": ["gluten free","lactose free"] 
-    }
-}
+//var formalFood = {
+//    hamburgare = {
+//        "menuID" : 20,
+//        "type": "food",
+//        "name": "Hamburger",
+//        "price": 70,
+//        "ingredients":["onion","cheese","pickles"],
+//        "allergies": ["gluten free","lactose free"] 
+//    }
+//}

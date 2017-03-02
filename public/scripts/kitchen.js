@@ -34,3 +34,16 @@ new Vue ({
     
     
 })
+
+function format_output(order) {
+    //this.orderId = orderNum;
+    //this.tableId = tableNum;
+    //this.items = items;
+    //this.state = 1; //0 - done, 1 - queue, 2 - in progress, 3 "the nothing state"
+    console.log(order.item);
+}
+
+var scale = Math.min( 
+    availableWidth / contentWidth, 
+    availableHeight / contentHeight 
+    );

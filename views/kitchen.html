@@ -24,7 +24,8 @@
             <div id="newOrd">
                 <div><h2>New Orders</h2></div>
                 <div id=scroll>
-                    <button class="orderButton" v-for="food in Orders" v-if="food.state == 1" v-on:click="sendItem(inProgList, food)"><div v-for="items in food.items">{{items.label}}</div></button>
+                    <button class="orderButton" v-for="food in Orders" v-if="food.state == 1" v-on:click="sendItem(inProgList, food)"><div v-for="items in food.items">{{items.label}}</div><div v-for="itumz in food.items">{{itumz.label}}</div>
+                    </button>
                 </div>
             </div>
             

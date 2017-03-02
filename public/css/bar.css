@@ -1,14 +1,15 @@
 #menu {
     background-color: lightgrey;
     max-width: 100%;
-    width: 600px;
-    height: 800px;
+    width: 70%;
+    height: 100%;
     float: left;
     border-radius: 25px;
     border: 2px solid black;
     padding: 20px;
     text-align: center;
     float: right;
+    transform: scale();
 }
 
 #checkoutItems {

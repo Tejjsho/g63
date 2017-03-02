@@ -3,7 +3,7 @@ var order = function(orderNum, tableNum, items) {
     this.orderId = orderNum;
     this.tableId = tableNum;
     this.items = items;
-    this.state = 1; //0 - done, 1 - queue, 2 - in progress 
+    this.state = 1; //0 - done, 1 - queue, 2 - in progress, 3 "the nothing state"
 }
 
 new Vue ({
