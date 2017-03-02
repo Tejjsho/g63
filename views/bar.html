@@ -14,7 +14,6 @@
   </head>
     <body>
         <main id="mainID">
-            <button id="foobar" v-on:click="sendToKitchen(TableNr, OrderNr)">Next</button>
             <!-- <div v-for="order in Orders"> {{order.orderId}}</div> -->
             
             <div id="checkout">
@@ -31,24 +30,26 @@
       
             <div id="menu">
                 <div><Strong>Menu</Strong> </div>
-	            <button class="drinkButton" v-for="drink in items" v-on:click="sendItem(drink)">{{drink.menuID}}# {{drink.label}}</button>
-	            
-                <div v-for="(food, index) in fooditems">
-	                <label class="foodButton" v-bind:for="index">{{food.menuID}}# {{food.label}}</label>
-	                <input v-bind:id="index" type="checkbox" name="c1">
-	                 
-                    <div class="dropDownContent">
-	                    
-                        <div v-for="ingredient in food.ingredients">
-	                        <label v-bind:for="ingredient">{{ingredient}}</label>
-	                        <input v-bind:id="food.menuID" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
-	                    </div>
+	           
+                <div id="menuList">
+                    <button class="drinkButton" v-for="drink in items" v-on:click="sendItem(drink)">{{drink.menuID}}# {{drink.label}}</button>
+                    <div v-for="(food, index) in fooditems">
+	                    <label class="foodButton" v-bind:for="index">{{food.menuID}}# {{food.label}}</label>
+	                    <input v-bind:id="index" type="checkbox" name="c1">
 	                     
-                        <button id="sendToKitchen" v-on:click="sendItem(food)">Klart</button>
+                        <div class="dropDownContent">
+	                        
+                            <div v-for="ingredient in food.ingredients">
+	                            <label v-bind:for="ingredient">{{ingredient}}</label>
+	                            <input v-bind:id="food.menuID" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
+	                        </div>
+	                         
+                            <button id="sendToKitchen" v-on:click="sendItem(food)">Klart</button>
+	                    </div>
+                     
 	                </div>
-                 
 	            </div>
-	            <div id="menuList"></div>
+                <button id="foobar" v-on:click="sendToKitchen(TableNr, OrderNr)">Send To Kitchen</button>
             </div>
         </main>
         <script src="/vue/vue.js"></script>
