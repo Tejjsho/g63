@@ -12,43 +12,49 @@
     <link rel="stylesheet" type="text/css" href="css/bar.css">
     <title>Bar</title>
   </head>
-  <body>
-    <main id="mainID">
-      <button id="foobar" v-on:click="sendToKitchen(TableNr, OrderNr)">Next</button>
-      <!-- <div v-for="order in Orders"> {{order.orderId}}</div> -->
-      <div id="checkout">
-	<div><h2> Checkout </h2></div>
-	<div id="tableNrDiv">Table nr: <input id="tableNr" v-model="TableNr" placeholder="Pick table"></div>
-	<div id="orderNr"> Order nr: {{OrderNr}}</div>
-	<div id="checkoutItems">
-	  
-	  <button class="checkoutButton" v-for="item in checkout" v-on:click="recieveItem(item)">{{item.label}} {{item.price}}Kr</button> 
-	  
-	</div>
-	<div id="total">Total: {{total}}Kr</div>
-      </div>
-      <div id="menu">
-        <div><Strong>Menu</Strong> </div>
-	<button class="drinkButton" v-for="drink in items" v-on:click="sendItem(drink)">{{drink.menuID}}# {{drink.label}}</button>
-	<div v-for="(food, index) in fooditems">
-	  <label class="foodButton" v-bind:for="index">{{food.menuID}}# {{food.label}}	</label>
-	  <input v-bind:id="index" type="checkbox" name="c1">
-	  <div class="dropDownContent">
-	    <div v-for="ingredient in food.ingredients">
-	      <label v-bind:for="ingredient">{{ingredient}}</label>
-	      <input v-bind:id="food.menuID" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
-	    </div>
-	    <button id="sendToKitchen" v-on:click="sendItem(food)">Klart</button>
-	  </div>
-	</div>
-	<div id="menuList"></div>
-      </div>
-    </main>
-    <script src="/vue/vue.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="scripts/messages.js"></script>
-    <script src="scripts/barToKitchen.js"></script>
-  </body>
-  <footer>
-  </footer>
+    <body>
+        <main id="mainID">
+            <button id="foobar" v-on:click="sendToKitchen(TableNr, OrderNr)">Next</button>
+            <!-- <div v-for="order in Orders"> {{order.orderId}}</div> -->
+            
+            <div id="checkout">
+	            <div><h2> Checkout </h2></div>
+	            <div id="tableNrDiv">Table nr: <input id="tableNr" v-model="TableNr" placeholder="Pick table"></div>
+	            <div id="orderNr">Order nr: {{OrderNr}}</div>
+	        
+                <div id="checkoutItems">
+	                <button class="checkoutButton" v-for="item in checkout" v-on:click="recieveItem(item)">{{item.label}} {{item.price}}Kr</button> 
+	            </div>
+	
+                <div id="total">Total: {{total}}Kr</div>
+            </div>
+      
+            <div id="menu">
+                <div><Strong>Menu</Strong> </div>
+	            <button class="drinkButton" v-for="drink in items" v-on:click="sendItem(drink)">{{drink.menuID}}# {{drink.label}}</button>
+	            
+                <div v-for="(food, index) in fooditems">
+	                <label class="foodButton" v-bind:for="index">{{food.menuID}}# {{food.label}}</label>
+	                <input v-bind:id="index" type="checkbox" name="c1">
+	                 
+                    <div class="dropDownContent">
+	                    
+                        <div v-for="ingredient in food.ingredients">
+	                        <label v-bind:for="ingredient">{{ingredient}}</label>
+	                        <input v-bind:id="food.menuID" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
+	                    </div>
+	                     
+                        <button id="sendToKitchen" v-on:click="sendItem(food)">Klart</button>
+	                </div>
+                 
+	            </div>
+	            <div id="menuList"></div>
+            </div>
+        </main>
+        <script src="/vue/vue.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="scripts/messages.js"></script>
+        <script src="scripts/barToKitchen.js"></script>
+    </body>
+    <footer></footer>
 </html>
