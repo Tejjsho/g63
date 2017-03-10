@@ -46,5 +46,38 @@ var food = [
         "price": 70,
         "ingredients":["onion","cheese","pickles","gluten","lactose"],
 	"removed":[],
-    }   
+    },
+   kycklingburgare = {
+        "menuID" : 22,
+        "type": "food",
+        "label": "Kycklingburgare",
+        "price": 70,
+       "ingredients":["onion","vegan chicken", "cheese","pickles","gluten","lactose"],
+	"removed":[],
+   },
+   kycklingburgare = {
+        "menuID" : 23,
+        "type": "food",
+        "label": "Kycklingburgare",
+        "price": 70,
+       "ingredients":["onion","vegan chicken", "cheese","pickles","gluten","lactose"],
+	"removed":[],
+   },
+    
+   kycklingburgare = {
+        "menuID" : 24,
+        "type": "food",
+        "label": "Kycklingburgare",
+        "price": 70,
+       "ingredients":["onion","vegan chicken", "cheese","pickles","gluten","lactose"],
+	"removed":[],
+   },
+   kycklingburgare = {
+        "menuID" : 25,
+        "type": "food",
+        "label": "Kycklingburgare",
+        "price": 70,
+       "ingredients":["onion","vegan chicken", "cheese","pickles","gluten","lactose"],
+	"removed":[],
+    } 
 ]

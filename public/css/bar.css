@@ -1,6 +1,6 @@
 #menu {
     background-color: lightgrey;
-    max-width: 100%;
+    max-width: 70%;
     width: 70%;
     height: 100%;
     float: left;
@@ -10,19 +10,58 @@
     text-align: center;
     float: left;
     transform: scale();
+    overflow-y: auto;
 }
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border: 2px solid black;
+    width: 8em;
+    border-radius: 25px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    float: left;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    --position: absolute;
+    min-width: 120px;
+}
+
+.dropdown-content a {
+    color:black;
+    display: block;
+}
+
+.show{display:block;}
+
+/* .dropdown:hover .dropdown-content { */
+/*     display: block; */
+/* } */
 
 #checkoutItems {
     --overflow: scroll;
-    overflow-y: scroll;
-    width: 320px;
+    overflow-y: auto;
+    width: 100%;
     height: 700px;
 }
 
 #checkout {
     background-color: lightgrey;
-    max-width: 100%;
-    width: 300px;
+    max-width: 15%;
+    width: 15%;
     height: 800px;
     float:right;
     border-radius: 25px;
@@ -61,7 +100,7 @@
     cursor: pointer;
     
     width: 40em;
-    height: 1.5em;
+    height: 2em;
     border: solid black;
     border-width: .1em;
     border-radius: 10em;
@@ -132,7 +171,28 @@
     left:2.5%;
 }
 
-#foobar {
+#idLeft {
+    padding-left: 5px;
+    padding-top: 3px;
+    float: left;
     text-align: left;
+}
+
+#foobar {
+    width: 20%;
+    height: 10%;
+    color: white;
+    background-color: green;
+    text-align: center;
+    float: center;
+}
+
+
+#foobar2 {
+    width: 20%;
+    height: 10%;
+    color: white;
+    background-color: red;
+    text-align: center;
     float: center;
 }

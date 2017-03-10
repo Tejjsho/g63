@@ -33,6 +33,48 @@ var drinks = [
 	"menuID" : 5,
 	"label"  : "Beer from tap",
 	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 6,
+	"label"  : "Beer from tap",
+	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 7,
+	"label"  : "Beer from tap",
+	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 8,
+	"label"  : "Beer from tap",
+	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 9,
+	"label"  : "Beer from tap",
+	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 10,
+	"label"  : "Beer from tap",
+	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 11,
+	"label"  : "Beer from tap",
+	"price"  : 35
+    },
+    {
+	"type"   : "drink",
+	"menuID" : 12,
+	"label"  : "Beer from tap",
+	"price"  : 35
     }
 ]
 

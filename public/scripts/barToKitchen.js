@@ -1,4 +1,26 @@
 'use strict';
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 var order = function(orderNum, tableNum, items) {
     this.orderId = orderNum;
     this.tableId = tableNum;
@@ -26,10 +48,6 @@ new Vue ({
 	total: 0
     },
     methods : {
-
-	dropdown : function() {
-	        document.getElementById("myDropdown").classList.toggle("show");
-	},
 	sendItem : function(item) {
 	
 	    this.checkout.push(item);
@@ -72,17 +90,27 @@ new Vue ({
 	},
 
 	sendToKitchen : function(tableNr, orderNr) {
-	    if(!isNaN(tableNr) && this.toKitchen.length !== 0) {
+	    if(!isNaN(tableNr) && this.toKitchen.length !== 0 && tableNr != 0) {
 		socket.emit('tableNr', tableNr);
 		var foobar = new order(orderNr, tableNr, this.toKitchen)
 		socket.emit('order', foobar);
 		this.toKitchen = [];
 		this.checkout = [];
+		total = 0;
+	    }
+	    else if(this.toKitchen !== 0 && tableNr === 0) {
+		alert("select table");
 	    }
 	    else {
-		this.toKitchen = [];
 		this.checkout = [];
+		total = 0;
 	    }
+	},
+	reset : function() {
+	    this.toKitchen = [];
+	    this.checkout = [];
+	    this.TableNr = 0;
+	    this.total = 0;
 	}
     }
     

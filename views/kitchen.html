@@ -31,7 +31,7 @@
             <div id="ready">
                 <div><h2> Ready </h2></div>
                 <div id="scrollWide">
-                    <button class="readyButton" v-for="item in Orders" v-if="item.state == 0" v-on:click="readyOrder(item)"><div v-for="items in item.items">Order:{{item.orderId}}<br>Table:{{item.tableId}}</br>{{items.label}}</div></button>
+                    <button class="readyButton" v-for="item in Orders" v-if="item.state == 0" v-on:click="readyOrder(item)">Order:{{item.orderId}}<br>Table:{{item.tableId}}</br><div v-for="items in item.items">{{items.label}}</div></button>
                 </div>
             </div>
             
