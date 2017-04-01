@@ -8,19 +8,26 @@ function myFunction() {
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+    if (!event.target.matches('.dropbtn')) {
+	
+	var dropdowns = document.getElementsByClassName("dropdown-content");
+	var i;
+	for (i = 0; i < dropdowns.length; i++) {
+	    var openDropdown = dropdowns[i];
+	    if (openDropdown.classList.contains('show')) {
+		openDropdown.classList.remove('show');
+	    }
+	}
     }
-  }
+    else if(event.target.matches('.tmpfoo')) {
+    	var radios = document.getElementsByName("c1");
+    	for (var i= 0; i < radios.length; i++) {
+    	    if(radios[i].checked) {
+		var x = radios[i].parentElement;
+	    }
+    	}
+    }
 }
-
 var order = function(orderNum, tableNum, items) {
     this.orderId = orderNum;
     this.tableId = tableNum;
@@ -73,6 +80,12 @@ new Vue ({
 		}
 		item.removed = []
 	    }
+	    var radios = document.getElementsByName("c1");
+	    for (var i=0; i < radios.length; i++) {
+		if(radios[i].checked) {
+		    radios[i].checked = false;
+		}
+	    }
 	},
 	recieveItem : function(item) {
 	    var index = this.checkout.indexOf(item);
@@ -96,14 +109,14 @@ new Vue ({
 		socket.emit('order', foobar);
 		this.toKitchen = [];
 		this.checkout = [];
-		total = 0;
+		this.total = 0;
 	    }
 	    else if(this.toKitchen !== 0 && tableNr === 0) {
 		alert("select table");
 	    }
 	    else {
 		this.checkout = [];
-		total = 0;
+		this.total = 0;
 	    }
 	},
 	reset : function() {
