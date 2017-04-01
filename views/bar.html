@@ -13,17 +13,20 @@
     <title>Bar</title>
   </head>
     <body>
-        <main id="mainID">
+      <main id="mainID">
           <!-- <div v-for="order in Orders"> {{order.orderId}}</div> -->
-            <div class="dropdown">
-	      <button  class="dropbtn" onclick="myFunction()"><p v-if="TableNr != 0">Table selected: {{TableNr}}</p><p v-else>Select Table</p></button>
-	      <div id="myDropdown" class="dropdown-content">
-		<div v-for="i=1 in 12">Table# {{i}}<input type="radio"  v-model="TableNr" v-bind:value="i"></div>
-	      </div> 
+          <div class="tableSelect">
+	    <div  v-for="i=1 in 12" class="tableSelButton">
+	      <input class="invis" type="radio" v-bind:id="i + 50" v-model="TableNr" v-bind:value="i">
+	      <label class="barr" v-bind:for="i + 50">Table {{i}}</label>
 	    </div>
-	    <div id="checkout">
-	      <div><h2> Checkout </h2></div>
-	      <div id="tableNrDiv">Table nr: {{TableNr}}</div>
+	      <!-- <button  class="dropbtn" onclick="myFunction()"><p v-if="TableNr != 0">Table selected: {{TableNr}}</p><p v-else>Select Table</p></button> -->
+	      <!-- <div id="myDropdown" class="dropdown-content"> -->
+	      <!-- 	<div v-for="i=1 in 12">Table# {{i}}<input type="radio"  v-model="TableNr" v-bind:value="i"></div> -->
+	  </div> 
+	  <div id="checkout">
+	    <div><h2> Checkout </h2></div>
+	    <div id="tableNrDiv">Table nr: {{TableNr}}</div>
 	      <div id="orderNr">Order nr: {{OrderNr}}</div>
 	      
               <div id="checkoutItems">
