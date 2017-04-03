@@ -104,7 +104,7 @@
     border-width: .1em;
     border-radius: 10em;
     padding: .1em .1em;
-    margin: .05em .05em .05em .05em;
+    margin: -0.1em -0.10em -0.10em -0.10em;
 }
 
 .foodButton + input {
@@ -120,9 +120,11 @@
 }
 
 .tmpfoo{
-    border-radius: 10em;
-    background-color: orange;
-    width: 19.2em;
+    border-radius: 2em;
+    border-width: 0.1px;
+    border: solid black;
+    background-color: #FFC000;
+    width: 19em;
 }
 
 .drinkButtonDiv {
