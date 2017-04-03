@@ -41,7 +41,7 @@
     min-width: 120px;
 }
 
-.dropdown-content a { /*REMOVE THIS A I THINK*/
+.dropdown-content { /*REMOVE THIS A I THINK*/
     color:black;
     display: block;
 }
