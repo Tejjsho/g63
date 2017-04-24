@@ -2,7 +2,7 @@
     background-color: lightgrey;
     max-width: 70%;
     width: 65%;
-    height: 100%;
+    height: 800px;
     float: left;
     border-radius: 25px;
     border: 2px solid black;
@@ -46,10 +46,6 @@
 
 .show{display:block;}
 
-/* .dropdown:hover .dropdown-content { */
-/*     display: block; */
-/* } */
-
 #checkoutItems {
     --overflow: scroll;
     overflow-y: auto;
@@ -67,6 +63,24 @@
     border: 2px solid black;
     padding: 20px;
     text-align: center;
+}
+
+#meme {
+    background-color: orange;
+    color: black;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    float: none;
+    width: 15.3em;
+    height: 2.5em;
+    border: solid black;
+    border-width: .1em;
+    border-radius: 10em;
+    padding: .1em .1em;
+    margin: .05em .05em .05em .05em;
+
 }
 
 #tableNr {
@@ -90,21 +104,23 @@
     float: right;
 }
 
+
 .foodButton {
-    background-color: orange;
-    color: black;
+    background-color:red;
+    #color: black;
     display: block;
-    text-align: center;
-    font-size: 20px;
+    #text-align: center;
+    #font-size: 20px;
     cursor: pointer;
-    float: none;
-    width: 15em;
-    height: 2.5em;
-    border: solid black;
-    border-width: .1em;
-    border-radius: 10em;
-    padding: .1em .1em;
-    margin: .05em .05em .05em .05em;
+    position: relative;
+    float: right;
+    width: 200px
+    height: 200px;
+    #border: solid black;
+    #border-width: .1em;
+    #border-radius: 10em;
+    #padding: .1em .1em;
+    #margin: .05em .05em .05em .05em;
 }
 
 .foodButton + input {
@@ -120,17 +136,24 @@
 }
 
 .tmpfoo{
+    --border-radius: 5em;
+    background-color: blue;
+    width: 19em;
+    
+    border: solid black;
+    border-width: .1em;
     border-radius: 10em;
-    background-color: orange;
-    width: 19.2em;
+    padding: .1em .1em;
+    margin: .05em .05em .05em .05em;
+
 }
 
-.drinkButtonDiv {
+.foodButtonDiv {
     float: left;
     width: 19.2em;
 }
 
-.foodButtonDiv {
+.drinkButtonDiv {
     float: left;
     width: 19.2em;
 }
@@ -167,32 +190,79 @@
     background-color: lime;
 }
 
-/* .tableSelButton { */
-/*     background-color: gray; */
-/*     width: 100px; */
-/*     height: 30px; */
-/*     border: 1px solid black; */
-/*     margin-bottom: 10px; */
-    
-/* } */
+.skirt {
+    background-color: orange;
+    color: black;
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    float: left;
+    width: 80%;
+    height: 2.5em;
+    border: solid orange;
+    border-width: .1em;
+    border-radius: 10em;
+   . padding: .1em .1em;
+    .margin: .05em .05em .05em .05em;
+}
 
-//.drinkButton {
-//    background-color: yellow;
-//    color: black;
-//    border: solid black;
-//    border-radius: 10px;
-//    //padding: 12px 32px;
-//    text-align: center;
-//    display: block;
-//    font-size: 16px;
-//    //margin-top: 1px;
-//    margin-top: .05em;
-//    margin-bottom: .05em;
-//    cursor: pointer;
-//    /*width: 600px;*/
-//    width: 50em;
-//    height: 2em;
-//}
+.skirt3 {
+    .display: none;
+    position: relative;
+    float: left;
+    background-color: darkorange;
+    width: 15em;
+    height: 10em;
+    .margin-top: 1em;
+}
+
+.skirt2 {
+    background-color: darkorange;
+    float: right;
+    width: 1.5em;
+    height: 2.5em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+..skirt2 + input {
+    display: none;
+}
+
+.skirt2 + input + div {
+    display: none;
+}
+
+.skirt2 + input:checked + div {
+    display: block;
+}
+
+.skirt2v2 {
+    display: none;
+}
+
+.foodButtonDiv2 {
+    .height: 5em;   
+}
+
+.bre {
+    background-color: orange;
+    color: black;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+
+    width: 15em;
+    height: 2.5em;
+    border: solid black;
+    border-width: .1em;
+    border-radius: 10em;
+    padding: .1em .1em;
+    margin: .05em .05em .05em .05em;
+}
+
 
 .drinkButton {
     background-color: yellow;
@@ -254,6 +324,6 @@
     float: center;
 }
 
-/* .dropDownContent { */
+/* .Dropdowncontent { */
 /*     background-color: orange; */
 /* } */
