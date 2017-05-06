@@ -59,8 +59,8 @@
 	      <div class="skirt3">
 		
 	    	<div class="ing" v-for="(ingredient, index) in food.ingredients">
-	    	  <input v-bind:id="index + 300" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
 	    	  <label  v-bind:for="index + 300">{{ingredient}}</label>
+		  <input v-bind:id="index + 300" type="checkbox" checked="checked" v-bind:name="food.menuID" v-bind:value="ingredient">
 	    	</div>
 		
 	    	<button id="sendToKitchen" v-on:click="sendItem(food)">Klart</button>
